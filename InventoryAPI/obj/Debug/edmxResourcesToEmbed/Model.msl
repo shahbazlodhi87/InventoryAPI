@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dbInventoryModelStoreContainer" CdmEntityContainer="dbInventoryEntities">
+    <EntitySetMapping Name="tblItems">
+      <EntityTypeMapping TypeName="dbInventoryModel.tblItem">
+        <MappingFragment StoreEntitySet="tblItem">
+          <ScalarProperty Name="bitStockable" ColumnName="bitStockable" />
+          <ScalarProperty Name="bitGRN" ColumnName="bitGRN" />
+          <ScalarProperty Name="bitDC" ColumnName="bitDC" />
+          <ScalarProperty Name="bitSV" ColumnName="bitSV" />
+          <ScalarProperty Name="bitPV" ColumnName="bitPV" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="varPacking" ColumnName="varPacking" />
+          <ScalarProperty Name="varManuBy" ColumnName="varManuBy" />
+          <ScalarProperty Name="intRegNum" ColumnName="intRegNum" />
+          <ScalarProperty Name="intCategory" ColumnName="intCategory" />
+          <ScalarProperty Name="intWeightUnit" ColumnName="intWeightUnit" />
+          <ScalarProperty Name="intWeight" ColumnName="intWeight" />
+          <ScalarProperty Name="varLocation" ColumnName="varLocation" />
+          <ScalarProperty Name="intOrderLevelQuantity" ColumnName="intOrderLevelQuantity" />
+          <ScalarProperty Name="varOrderLevel" ColumnName="varOrderLevel" />
+          <ScalarProperty Name="varDescription" ColumnName="varDescription" />
+          <ScalarProperty Name="varMaxOrderLevel" ColumnName="varMaxOrderLevel" />
+          <ScalarProperty Name="varMinOrderLevel" ColumnName="varMinOrderLevel" />
+          <ScalarProperty Name="intPackingType" ColumnName="intPackingType" />
+          <ScalarProperty Name="intPackingQuantity" ColumnName="intPackingQuantity" />
+          <ScalarProperty Name="intPacking" ColumnName="intPacking" />
+          <ScalarProperty Name="intSupplier" ColumnName="intSupplier" />
+          <ScalarProperty Name="intCostMethod" ColumnName="intCostMethod" />
+          <ScalarProperty Name="intClass" ColumnName="intClass" />
+          <ScalarProperty Name="varShortName" ColumnName="varShortName" />
+          <ScalarProperty Name="varName" ColumnName="varName" />
+          <ScalarProperty Name="barCode" ColumnName="barCode" />
+          <ScalarProperty Name="intCode" ColumnName="intCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblVouchers">
+      <EntityTypeMapping TypeName="dbInventoryModel.tblVoucher">
+        <MappingFragment StoreEntitySet="tblVoucher">
+          <ScalarProperty Name="intSOName" ColumnName="intSOName" />
+          <ScalarProperty Name="intZoneName" ColumnName="intZoneName" />
+          <ScalarProperty Name="dtDate" ColumnName="dtDate" />
+          <ScalarProperty Name="intVoucherNo" ColumnName="intVoucherNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblVoucherDTLs">
+      <EntityTypeMapping TypeName="dbInventoryModel.tblVoucherDTL">
+        <MappingFragment StoreEntitySet="tblVoucherDTL">
+          <ScalarProperty Name="floatAmount" ColumnName="floatAmount" />
+          <ScalarProperty Name="floatCommission" ColumnName="floatCommission" />
+          <ScalarProperty Name="floatRate" ColumnName="floatRate" />
+          <ScalarProperty Name="intPieces" ColumnName="intPieces" />
+          <ScalarProperty Name="intItemCode" ColumnName="intItemCode" />
+          <ScalarProperty Name="intCategory" ColumnName="intCategory" />
+          <ScalarProperty Name="intId" ColumnName="intId" />
+          <ScalarProperty Name="intVNo" ColumnName="intVNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

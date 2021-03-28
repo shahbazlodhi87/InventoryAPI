@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbInventoryModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tblItem">
+    <Key>
+      <PropertyRef Name="intCode" />
+    </Key>
+    <Property Name="intCode" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="barCode" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="varName" Type="nvarchar" MaxLength="50" />
+    <Property Name="varShortName" Type="nvarchar" MaxLength="50" />
+    <Property Name="intClass" Type="int" />
+    <Property Name="intCostMethod" Type="int" />
+    <Property Name="intSupplier" Type="int" />
+    <Property Name="intPacking" Type="int" />
+    <Property Name="intPackingQuantity" Type="int" />
+    <Property Name="intPackingType" Type="int" />
+    <Property Name="varMinOrderLevel" Type="nvarchar" MaxLength="50" />
+    <Property Name="varMaxOrderLevel" Type="nvarchar" MaxLength="50" />
+    <Property Name="varDescription" Type="nvarchar" MaxLength="50" />
+    <Property Name="varOrderLevel" Type="nvarchar" MaxLength="50" />
+    <Property Name="intOrderLevelQuantity" Type="int" />
+    <Property Name="varLocation" Type="nvarchar" MaxLength="50" />
+    <Property Name="intWeight" Type="int" />
+    <Property Name="intWeightUnit" Type="int" />
+    <Property Name="intCategory" Type="int" />
+    <Property Name="intRegNum" Type="int" />
+    <Property Name="varManuBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="varPacking" Type="nvarchar" MaxLength="50" />
+    <Property Name="Image" Type="image" />
+    <Property Name="bitPV" Type="bit" />
+    <Property Name="bitSV" Type="bit" />
+    <Property Name="bitDC" Type="bit" />
+    <Property Name="bitGRN" Type="bit" />
+    <Property Name="bitStockable" Type="bit" />
+  </EntityType>
+  <EntityType Name="tblVoucher">
+    <Key>
+      <PropertyRef Name="intVoucherNo" />
+    </Key>
+    <Property Name="intVoucherNo" Type="int" Nullable="false" />
+    <Property Name="dtDate" Type="date" />
+    <Property Name="intZoneName" Type="int" />
+    <Property Name="intSOName" Type="int" />
+  </EntityType>
+  <EntityType Name="tblVoucherDTL">
+    <Key>
+      <PropertyRef Name="intId" />
+    </Key>
+    <Property Name="intVNo" Type="int" />
+    <Property Name="intId" Type="int" Nullable="false" />
+    <Property Name="intCategory" Type="int" />
+    <Property Name="intItemCode" Type="int" />
+    <Property Name="intPieces" Type="int" />
+    <Property Name="floatRate" Type="float" />
+    <Property Name="floatCommission" Type="float" />
+    <Property Name="floatAmount" Type="float" />
+  </EntityType>
+  <EntityContainer Name="dbInventoryModelStoreContainer">
+    <EntitySet Name="tblItem" EntityType="Self.tblItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblVoucher" EntityType="Self.tblVoucher" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblVoucherDTL" EntityType="Self.tblVoucherDTL" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="dbInventoryModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tblItem">
+          <Key>
+            <PropertyRef Name="intCode" />
+          </Key>
+          <Property Name="intCode" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="barCode" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="varName" Type="nvarchar" MaxLength="50" />
+          <Property Name="varShortName" Type="nvarchar" MaxLength="50" />
+          <Property Name="intClass" Type="int" />
+          <Property Name="intCostMethod" Type="int" />
+          <Property Name="intSupplier" Type="int" />
+          <Property Name="intPacking" Type="int" />
+          <Property Name="intPackingQuantity" Type="int" />
+          <Property Name="intPackingType" Type="int" />
+          <Property Name="varMinOrderLevel" Type="nvarchar" MaxLength="50" />
+          <Property Name="varMaxOrderLevel" Type="nvarchar" MaxLength="50" />
+          <Property Name="varDescription" Type="nvarchar" MaxLength="50" />
+          <Property Name="varOrderLevel" Type="nvarchar" MaxLength="50" />
+          <Property Name="intOrderLevelQuantity" Type="int" />
+          <Property Name="varLocation" Type="nvarchar" MaxLength="50" />
+          <Property Name="intWeight" Type="int" />
+          <Property Name="intWeightUnit" Type="int" />
+          <Property Name="intCategory" Type="int" />
+          <Property Name="intRegNum" Type="int" />
+          <Property Name="varManuBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="varPacking" Type="nvarchar" MaxLength="50" />
+          <Property Name="Image" Type="image" />
+          <Property Name="bitPV" Type="bit" />
+          <Property Name="bitSV" Type="bit" />
+          <Property Name="bitDC" Type="bit" />
+          <Property Name="bitGRN" Type="bit" />
+          <Property Name="bitStockable" Type="bit" />
+        </EntityType>
+        <EntityType Name="tblVoucher">
+          <Key>
+            <PropertyRef Name="intVoucherNo" />
+          </Key>
+          <Property Name="intVoucherNo" Type="int" Nullable="false" />
+          <Property Name="dtDate" Type="date" />
+          <Property Name="intZoneName" Type="int" />
+          <Property Name="intSOName" Type="int" />
+        </EntityType>
+        <EntityType Name="tblVoucherDTL">
+          <Key>
+            <PropertyRef Name="intId" />
+          </Key>
+          <Property Name="intVNo" Type="int" />
+          <Property Name="intId" Type="int" Nullable="false" />
+          <Property Name="intCategory" Type="int" />
+          <Property Name="intItemCode" Type="int" />
+          <Property Name="intPieces" Type="int" />
+          <Property Name="floatRate" Type="float" />
+          <Property Name="floatCommission" Type="float" />
+          <Property Name="floatAmount" Type="float" />
+        </EntityType>
+        <EntityContainer Name="dbInventoryModelStoreContainer">
+          <EntitySet Name="tblItem" EntityType="Self.tblItem" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblVoucher" EntityType="Self.tblVoucher" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblVoucherDTL" EntityType="Self.tblVoucherDTL" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="dbInventoryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="dbInventoryEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tblItems" EntityType="dbInventoryModel.tblItem" />
+          <EntitySet Name="tblVouchers" EntityType="dbInventoryModel.tblVoucher" />
+          <EntitySet Name="tblVoucherDTLs" EntityType="dbInventoryModel.tblVoucherDTL" />
+        </EntityContainer>
+        <EntityType Name="tblItem">
+          <Key>
+            <PropertyRef Name="intCode" />
+          </Key>
+          <Property Name="intCode" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="barCode" Type="Guid" Nullable="false" />
+          <Property Name="varName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="varShortName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="intClass" Type="Int32" />
+          <Property Name="intCostMethod" Type="Int32" />
+          <Property Name="intSupplier" Type="Int32" />
+          <Property Name="intPacking" Type="Int32" />
+          <Property Name="intPackingQuantity" Type="Int32" />
+          <Property Name="intPackingType" Type="Int32" />
+          <Property Name="varMinOrderLevel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="varMaxOrderLevel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="varDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="varOrderLevel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="intOrderLevelQuantity" Type="Int32" />
+          <Property Name="varLocation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="intWeight" Type="Int32" />
+          <Property Name="intWeightUnit" Type="Int32" />
+          <Property Name="intCategory" Type="Int32" />
+          <Property Name="intRegNum" Type="Int32" />
+          <Property Name="varManuBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="varPacking" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="bitPV" Type="Boolean" />
+          <Property Name="bitSV" Type="Boolean" />
+          <Property Name="bitDC" Type="Boolean" />
+          <Property Name="bitGRN" Type="Boolean" />
+          <Property Name="bitStockable" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="tblVoucher">
+          <Key>
+            <PropertyRef Name="intVoucherNo" />
+          </Key>
+          <Property Name="intVoucherNo" Type="Int32" Nullable="false" />
+          <Property Name="dtDate" Type="DateTime" Precision="0" />
+          <Property Name="intZoneName" Type="Int32" />
+          <Property Name="intSOName" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tblVoucherDTL">
+          <Key>
+            <PropertyRef Name="intId" />
+          </Key>
+          <Property Name="intVNo" Type="Int32" />
+          <Property Name="intId" Type="Int32" Nullable="false" />
+          <Property Name="intCategory" Type="Int32" />
+          <Property Name="intItemCode" Type="Int32" />
+          <Property Name="intPieces" Type="Int32" />
+          <Property Name="floatRate" Type="Double" />
+          <Property Name="floatCommission" Type="Double" />
+          <Property Name="floatAmount" Type="Double" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="dbInventoryModelStoreContainer" CdmEntityContainer="dbInventoryEntities">
+          <EntitySetMapping Name="tblItems">
+            <EntityTypeMapping TypeName="dbInventoryModel.tblItem">
+              <MappingFragment StoreEntitySet="tblItem">
+                <ScalarProperty Name="bitStockable" ColumnName="bitStockable" />
+                <ScalarProperty Name="bitGRN" ColumnName="bitGRN" />
+                <ScalarProperty Name="bitDC" ColumnName="bitDC" />
+                <ScalarProperty Name="bitSV" ColumnName="bitSV" />
+                <ScalarProperty Name="bitPV" ColumnName="bitPV" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="varPacking" ColumnName="varPacking" />
+                <ScalarProperty Name="varManuBy" ColumnName="varManuBy" />
+                <ScalarProperty Name="intRegNum" ColumnName="intRegNum" />
+                <ScalarProperty Name="intCategory" ColumnName="intCategory" />
+                <ScalarProperty Name="intWeightUnit" ColumnName="intWeightUnit" />
+                <ScalarProperty Name="intWeight" ColumnName="intWeight" />
+                <ScalarProperty Name="varLocation" ColumnName="varLocation" />
+                <ScalarProperty Name="intOrderLevelQuantity" ColumnName="intOrderLevelQuantity" />
+                <ScalarProperty Name="varOrderLevel" ColumnName="varOrderLevel" />
+                <ScalarProperty Name="varDescription" ColumnName="varDescription" />
+                <ScalarProperty Name="varMaxOrderLevel" ColumnName="varMaxOrderLevel" />
+                <ScalarProperty Name="varMinOrderLevel" ColumnName="varMinOrderLevel" />
+                <ScalarProperty Name="intPackingType" ColumnName="intPackingType" />
+                <ScalarProperty Name="intPackingQuantity" ColumnName="intPackingQuantity" />
+                <ScalarProperty Name="intPacking" ColumnName="intPacking" />
+                <ScalarProperty Name="intSupplier" ColumnName="intSupplier" />
+                <ScalarProperty Name="intCostMethod" ColumnName="intCostMethod" />
+                <ScalarProperty Name="intClass" ColumnName="intClass" />
+                <ScalarProperty Name="varShortName" ColumnName="varShortName" />
+                <ScalarProperty Name="varName" ColumnName="varName" />
+                <ScalarProperty Name="barCode" ColumnName="barCode" />
+                <ScalarProperty Name="intCode" ColumnName="intCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblVouchers">
+            <EntityTypeMapping TypeName="dbInventoryModel.tblVoucher">
+              <MappingFragment StoreEntitySet="tblVoucher">
+                <ScalarProperty Name="intSOName" ColumnName="intSOName" />
+                <ScalarProperty Name="intZoneName" ColumnName="intZoneName" />
+                <ScalarProperty Name="dtDate" ColumnName="dtDate" />
+                <ScalarProperty Name="intVoucherNo" ColumnName="intVoucherNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblVoucherDTLs">
+            <EntityTypeMapping TypeName="dbInventoryModel.tblVoucherDTL">
+              <MappingFragment StoreEntitySet="tblVoucherDTL">
+                <ScalarProperty Name="floatAmount" ColumnName="floatAmount" />
+                <ScalarProperty Name="floatCommission" ColumnName="floatCommission" />
+                <ScalarProperty Name="floatRate" ColumnName="floatRate" />
+                <ScalarProperty Name="intPieces" ColumnName="intPieces" />
+                <ScalarProperty Name="intItemCode" ColumnName="intItemCode" />
+                <ScalarProperty Name="intCategory" ColumnName="intCategory" />
+                <ScalarProperty Name="intId" ColumnName="intId" />
+                <ScalarProperty Name="intVNo" ColumnName="intVNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
